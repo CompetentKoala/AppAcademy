@@ -1,0 +1,34 @@
+let isPrime = function(num){
+    if (num < 2) {
+        return false;
+    }
+
+    for (let i = 2; i < num; i++){
+        if(num % i === 0){
+
+            return false
+        }
+    } return true
+}
+
+// Your code here
+let nextPrime = function(num){
+    for (let i = num + 1; i !== true; i++){
+        if (isPrime(i)){
+            return i
+        }
+    }
+}
+
+//look for the neearest prime num that is is greator than input
+//check is number is prime
+//loop upwards until prime is found
+//return that number
+
+
+console.log(nextPrime(2)); // 3
+console.log(nextPrime(3)); // 5
+console.log(nextPrime(7)); // 11
+console.log(nextPrime(8)); // 11
+console.log(nextPrime(20)); // 23
+console.log(nextPrime(97)); // 101
