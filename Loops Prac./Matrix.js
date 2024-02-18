@@ -17,3 +17,4 @@ function maxInMatrix(matrix) {
             [47, 72, 56]]
 
   console.log(maxInMatrix(matrix)); // 72
+  console.log(maxInMatrix(matrix)); // 72
