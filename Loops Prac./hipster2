@@ -1,0 +1,30 @@
+// your code
+
+function hipsterfy(sent){
+    let words = sent.split(" ")
+    let hipWords = []
+    //console.log(words.length)
+
+
+    for ( let i  = 0; i < words.length; i++){
+        let word = words[i]
+        //console.log(word)
+        hipWords.push(hipWord(word))
+    } return hipWords.join(' ')
+}
+
+function hipWord(word){
+    let vowels = "aeiou"
+    for (let i = word.length-1; i => 0; i--){
+        if(vowels.includes(word[i])){
+            if(word.length <= 2){
+                return word.slice(0)
+            }
+        return word.slice(0,i) + word.slice(i+1,word.length)
+        }
+    }
+}
+//console.log(hipWord('up'))
+console.log(hipsterfy('When should everyone wake up?')); // 'Whn shold everyon wak p?'
+console.log(hipsterfy('get ready for our bootcamp')); // 'gt redy fr or bootcmp'
+console.log(hipsterfy('panthers are great animals')); // 'panthrs ar gret animls'
