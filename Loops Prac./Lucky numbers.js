@@ -1,39 +1,28 @@
 function luckyNumbers(matrix) {
-    // your code here...
-    let lucky = []
-    let luckyNum =[]
-    for (let i = 0; i< matrix.length; i++){
-        let subArray = []
-        let maxCol = matrix[i][0]
-        let maxRow = 0
-        for (let j = 0; j<matrix[i.length];j++){
-            if(matrix[i][j] < maxCol){
-                maxCol = (matrix[i][j])
-            }
-        } lucky.push([maxCol])
-    }
-    let maxNum = lucky[0][0]
-    for (let k = 0; k < lucky.length; k++){
-        if (lucky[k][0] > maxNum){
-            maxNum = lucky[k][0]
+    let luckyNums = [];
+
+    for (let i = 0; i < matrix.length; i++) {
+        let minRow = Math.min(...matrix[i]); // Find minimum element in the row
+        let colIndex = matrix[i].indexOf(minRow); // Find column index of the minimum element
+
+        // Check if the minimum element is also the maximum in its column
+        if (matrix.every(row => row[colIndex] <= minRow)) {
+            luckyNums.push(minRow);
         }
     }
-    console.log(lucky)
-    luckyNum.push([maxNum])
-    return luckyNum
-  }
 
+    return luckyNums;
+}
 
-  matrix = [[ 5,  9, 21],
-            [ 9, 19,  6],
-            [12, 14, 15]]
+// Example usage:
+let matrix1 = [[5, 9, 21],
+               [9, 19, 6],
+               [12, 14, 15]];
 
-  console.log(luckyNumbers(matrix)); // [12]
+console.log(luckyNumbers(matrix1)); // Output: [12]
 
-  matrix = [[ 5, 10,  8,  6],
-            [10,  2,  7,  9],
-            [21, 15, 19, 10]]
+let matrix2 = [[5, 10, 8, 6],
+               [10, 2, 7, 9],
+               [21, 15, 19, 10]];
 
-  console.log(luckyNumbers(matrix)); // [10]
-
-  luckyNumbers(matrix) that takes in a 2-dimensional array (matrix) and returns all lucky numbers in any order. A lucky number is the minimum element in its row and the maximum in its column.
+console.log(luckyNumbers(matrix2)); // Output: [10]
