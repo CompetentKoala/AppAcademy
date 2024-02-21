@@ -35,3 +35,5 @@ function luckyNumbers(matrix) {
             [21, 15, 19, 10]]
 
   console.log(luckyNumbers(matrix)); // [10]
+
+  luckyNumbers(matrix) that takes in a 2-dimensional array (matrix) and returns all lucky numbers in any order. A lucky number is the minimum element in its row and the maximum in its column.
