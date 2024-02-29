@@ -30,7 +30,7 @@ function repeatingTranslate(sent){
 //     'like'->'likelike')
 function endVowel(word){
     vowels = "aeiouAEIOU"
-    if (vowels.includes(word[word.length-1])){
+    if (vowels.includes(word[word.length-1)){
         return true
     } return false
 }
